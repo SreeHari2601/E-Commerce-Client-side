@@ -1,0 +1,69 @@
+    <h5 style="margin-left: 150px; margin-top: 60px; font-family: Arial, Helvetica, sans-serif;">
+      <b>How would you like to get your order?</b>
+    </h5>
+
+    <p style="margin-left: 150px; margin-top: 30px; font-family: Arial, Helvetica, sans-serif;">Customs regulation for
+      India require a copy of the recipient's KYC. The address on the KYC needs to match the
+      shipping address. Our courier will contact you via SMS/email in due course to obtain a copy of your KYC. The KYC
+      will
+      be stored securely and used solely for the purpose of clearing customs (including sharing it with customs
+      officials)
+      for this order, future orders, and any product returns.</p>
+    <p style="margin-left: 150px;"><b>Cash on Delivery</b> ✅</p>
+    <div class="row col-6">
+    </div>
+    <button style="margin-left: 150px;" class="btn btn-success "><b>Become A Member</b></button><br><br>
+    <a href="products/login" style="margin-left: 150px; " class="btn btn-info  mt-2"><b>Log In</b></a>
+
+    <div class="text-dark text-center">
+      <h4 style="margin-left: 150px; margin-top: 20px; font-family: Arial, Helvetica, sans-serif;">Enter Your Name and
+        Address:</h4><br>
+      <form (ngSubmit)="confirm()" [formGroup]="confirmForm">
+        <input formControlName="firstName" name="firstName"
+          style="width: 500px; background-color: rgb(239, 235, 231); margin-left: 550px; border: 10; font-weight: 300;"
+          class="form-control text-dark text-center boder-success" type="text" placeholder="First Name"><br>
+        <div *ngIf="this.confirmForm.get('firstName')?.errors&&this.confirmForm.get('firstName')?.touched"
+          style="margin-left: 80px; color: red;">
+          Enter Your FirstName
+        </div>
+        <input formControlName="lastName" name="lastName"
+          style="width: 500px; background-color: rgb(239, 235, 231); margin-left: 550px; border: 10; font-weight: 300;"
+          class="form-control text-dark text-center boder-success" type="text" placeholder="Last Name"><br>
+        <div *ngIf="this.confirmForm.get('lastName')?.errors&&this.confirmForm.get('lastName')?.touched"
+          style="margin-left: 80px; color: red;">
+          Enter Your lastName
+        </div>
+        <input formControlName="addressLine1" name="addressLine1"
+          style="width: 500px; background-color: rgb(239, 235, 231); margin-left: 550px; border: 10; font-weight: 300;"
+          class="form-control text-dark text-center boder-success" type="text" placeholder="Address Line 1"><br>
+        <div *ngIf="this.confirmForm.get('addressLine1')?.errors&&this.confirmForm.get('addressLine1')?.touched"
+          style="margin-left: 80px; color: red;">
+          Enter Your Address
+        </div>
+        <input formControlName="addressLine2" name="addressLine2"
+          style="width: 500px; background-color: rgb(239, 235, 231); margin-left: 550px; border: 10; font-weight: 300;"
+          class="form-control text-dark text-center boder-success" type="text" placeholder="Address Line 2"><br>
+        <div *ngIf="this.confirmForm.get('addressLine2')?.errors&&this.confirmForm.get('addressLine2')?.touched"
+          style="margin-left: 80px; color: red;">
+          Enter Your Address
+        </div>
+        <input formControlName="phone" name="phone"
+          style="width: 500px; background-color: rgb(239, 235, 231); margin-left: 550px; border: 10; font-weight: 300;"
+          class="form-control text-dark text-center boder-success" type="text" placeholder="Phone number"><br>
+        <div *ngIf="this.confirmForm.get('phone')?.errors&&this.confirmForm.get('phone')?.touched"
+          style="margin-left: 80px; color: red;">
+          Invalid Phone
+        </div>
+        <input formControlName="email" name="email"
+          style="width: 500px; background-color: rgb(239, 235, 231); margin-left: 550px; border: 10; font-weight: 300;"
+          class="form-control text-dark text-center boder-success" type="text" placeholder="E-mail Id">
+        <div *ngIf="this.confirmForm.get('email')?.errors&&this.confirmForm.get('email')?.touched"
+          style="margin-left: 80px; color: red;">
+          Enter Your E-mail
+        </div>
+      </form>
+
+    </div>
+    <br>
+    <button (click)="confirm()" type="submit" style="margin-left: 725px;" class="btn btn-success">Confirm Your
+      Order</button>

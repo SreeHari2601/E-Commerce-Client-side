@@ -1,0 +1,93 @@
+<div *ngIf="eMsg">
+  <h2  style="margin-left: 300px; margin-top: 100px;"><b>MY WISHLIST 💖</b></h2>
+  <h6 style="margin-left: 300px; margin-top: 0px;"><b>0 ITEMS 💼</b></h6>
+  <p style="margin-left: 300px; margin-top: px;">You haven't saved any items to your wishlist yet. Start shopping and
+    add your favorite items to your wishlist.</p>
+   <img style="margin-left: 600px; margin-top: 40px; height: 250px; width: 290px;" src="https://th.bing.com/th/id/OIP.I1TJ_qQgwsDXRsrRKsUG0wHaEe?pid=ImgDet&rs=1" alt="">
+</div>
+
+<br>
+<br>
+
+
+
+<br>
+<h4 *ngIf="!eMsg" class="text-center"><b>Unisex Section🤼</b></h4>
+<br>
+<div class="row ms-4" *ngIf="!eMsg">
+  <div class="card mb-3 card text-dark  ms-3 border-0 " style="max-width: 440px;" *ngFor="let product of wishlist">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="{{product.image}}"
+          class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body bg-secondary">
+          <h5 class="card-title text-light">{{product.title}}</h5>
+          <p class="card-text text-light" >{{product.description}} <i class="fa-solid fa-indian-rupee-sign"></i></p>
+          <button (click)="deleteFromWishList(product)" style="margin-top: 5px;" class="btn btn-outline-light"><i
+              class="fa-sharp fa-solid fa-trash fs-8"></i>
+          </button>
+          <button (click)="addToCart(product)" style="float: right; margin-top: 5px;" class="btn btn-outline-light  "><i
+              class="fa-solid fs-8 fa-cart-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr *ngIf="!eMsg" style="color: black;">
+<br>
+<h4 *ngIf="!eMsg" class="text-center"><b>Womens 👩</b></h4>
+<br>
+<div class="row ms-4" *ngIf="!eMsg">
+  <div class="card mb-3 ms-3 border-0" style="max-width: 440px;  " *ngFor="let product of wishListWomen">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="{{product.image}}"
+          class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body bg-secondary">
+          <h5 class="card-title text-light">{{product.title}}</h5>
+          <p class="card-text text-light">{{product.description}} <i class="fa-solid fa-indian-rupee-sign"></i></p>
+          <button (click)="deleteFromWishListWomen(product)" style="margin-top: 5px;"
+            class="btn btn-outline-light"><i class="fa-sharp fa-solid fa-trash fs-8"></i>
+          </button>
+          <button (click)="addToCartWomen(product)"  style="float: right; margin-top: 5px;" class="btn btn-outline-light  "><i
+              class="fa-solid fs-8 fa-cart-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr *ngIf="!eMsg">
+<br>
+<h4 *ngIf="!eMsg" class="text-center"><b>Mens👦</b></h4>
+<br>
+<div class="row ms-4"*ngIf="!eMsg">
+  <div class="card mb-3 ms-3 border-0" style="max-width: 440px;" *ngFor="let product of wishListMen">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="{{product.image}}"
+          class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body bg-secondary">
+          <h5 class="card-title text-light">{{product.title}}</h5>
+          <p class="card-text text-light">{{product.description}} <i class="fa-solid fa-indian-rupee-sign"></i></p>
+          <button (click)="deleteFromWishListMen(product)" style="margin-top: 5px;" class="btn btn-outline-light"><i
+              class="fa-sharp fa-solid fa-trash fs-8"></i>
+          </button>
+          <button (click)="addToCartMen(product)" style="float: right; margin-top: 5px;" class="btn btn-outline-light  "><i
+              class="fa-solid fs-8 fa-cart-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

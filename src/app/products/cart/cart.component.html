@@ -1,0 +1,81 @@
+<div *ngIf="cartItems.length==0" >
+  <h2 style="margin-left: 300px; margin-top: 100px;"><b>MY Cart 🛒</b></h2>
+  <h6 style="margin-left: 300px; margin-top: 0px;"><b>0 ITEMS 💼</b></h6>
+  <p style="margin-left: 300px; margin-top: px;">You haven't saved any items to your Cart yet. Start shopping and
+    add your favorite items to your Cart.</p>
+   <img style="margin-left: 600px; margin-top: 40px; height: 250px; width: 290px;" src="https://th.bing.com/th/id/OIP.I1TJ_qQgwsDXRsrRKsUG0wHaEe?pid=ImgDet&rs=1" alt="">
+</div>
+
+<br>
+<br>
+
+
+
+<div *ngIf="cartItems.length==!0" style="font-family: Arial, Helvetica, sans-serif;" >
+    <h3  style="margin-left: 200px; margin-top: 45px; font-family: 'Times New Roman', Times, serif; color: brown;" >Free Shipping for Members</h3>
+    <p style="margin-left: 200px; margin-top: 45px; font-family: 'Times New Roman', Times, serif;" >Become a E-buy Member for fast and free shipping. Join us or Sign-in</p>
+</div>
+<h3 *ngIf="cartItems.length>0"  style="margin-left: 200px;"><b>Bag</b></h3>
+<div *ngFor="let products of cartItems" >
+<br>
+
+<img style="height: 150px;margin-left: 200px" src="{{products.image}}" alt="">
+<h6 class="text-dark" style="margin-left: 380px; margin-top: -150px;">{{products.title}}</h6>
+<h6 class="text-dark" style="margin-left: 380px;">{{products.category}}</h6>
+<h6 class="text-dark" class="text-danger" style="margin-left: 380px;"><b>{{products.price}}</b></h6>
+<h6 class="text-dark" style="margin-left: 380px;"><b>Size L &nbsp; Quantity 1 </b></h6>
+<h6 style="margin-left: 710px;"><b>Rating:- {{products.rating.rate}}</b></h6>
+<h6 style="margin-left: 710px;"><b>Count:- {{products.rating.count}}</b></h6>
+<button (click)="removeCartItem(products)" style="margin-left: 100px; border: none; background-color: rgb(252, 252, 252);"><i style="margin-left: 250px;"  class="fa-sharp fa-solid fa-trash fs-8"></i></button>
+<br>
+<br>
+<h6 style="margin-left: 200px;">Shipping</h6>
+<h6 style="margin-left: 200px;">Arrives by Tue, Jan 10 Edit Location</h6>
+<br>
+<h6 style="margin-left: 200px;">Free Pickup</h6>
+<br>
+<h6 style="text-decoration: underline; margin-left: 200px;" >Find a Store</h6>
+<br><i style="margin-left: 200px;"  class="fa-regular fa-clock text-warning fa fs-4" ></i>
+<h6  style="margin-left: 200px; color: rgb(220, 142, 142);"><b>Just a few left. Order soon.</b></h6>
+
+</div>
+<div *ngIf="cartItems.length>0" >
+    <button (click)="removeAllItems()" style="margin-left: 200px;">
+      <b>Empty</b>
+    </button>&nbsp;
+    <button >
+      <b routerLink="">Shop More</b>
+    </button>&nbsp;
+    <button data-bs-toggle="modal" data-bs-target="#exampleModal" >
+     <b >Check Out</b>
+    </button>
+    
+</div>
+<b *ngIf="cartItems.length>0" style="margin-left: 1030px; margin-top: -1000px; font-size: 25px;">Grand Total: <b>{{GrandTotal}}</b>.<i class="fa-solid fa-indian-rupee-sign"></i></b>
+ <div>
+   <h5 style="margin-left: 1050px; font-size: 25px;"><b *ngIf="updatedTotal" >New Total : <b>{{updatedTotal}}.</b> <i class="fa-solid fa-indian-rupee-sign"></i> </b></h5>
+   <a  href="products/place" *ngIf="cartItems.length>0"  style="margin-left: 1200px;" class="btn btn-lg btn-success">Place Order</a>
+ </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h1 class="modal-title fs-5 bg-light text-dark" id="exampleModalLabel"><b>Apply Coupen</b>
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-light">
+        <div [ngSwitch]="GrandTotal" >
+          <span id="coupen" *ngSwitchDefault><img (click)="discount10per()"  style="height: 200px; width: 470px; margin-left: 0;" src="https://www.netclipart.com/pp/m/202-2028804_10-off-png-10-off-coupon-png.png" alt=""></span>
+        <span *ngSwitchCase="2222"><img (click)="discount15per()"   style="height: 130px; width: 470px; margin-left:0;" src="https://pbs.twimg.com/media/DbqTIdaVwAAXNBJ.jpg" alt=""></span>
+        <span  *ngSwitchCase="6000"> <img (click)="discount20per()"  style="height: 130px; width: 470px; margin-left: 0px;" src="https://i.pinimg.com/originals/16/09/5e/16095e5b54e8eeb68a4eaa736cbcc83a.jpg" alt=""></span>
+        <span  *ngSwitchCase="12000" ><img (click)="discount40per()"   style="height: 130px; width: 470px;margin-left: 0px;" src="https://www.carbatec.com.au/Documents/Banners/50specials_2.png" alt=""></span>
+        </div>
+      </div>
+      <div class="modal-footer bg-light">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+

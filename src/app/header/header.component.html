@@ -1,0 +1,51 @@
+<div id="nav" style="background-color: rgb(11, 11, 11);" class="bg-dark ">
+    <div class="text-center" style="background-color:  rgb(204, 195, 195);">
+        <p class="text-dark p-2 "><b>EXTRA 10% INSTANT DISCOUNT FOR ALL ONLINE PAYMENTS. FREE DELIVERY. FREE RETURNS.</b></p>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href=""><i class="fa-solid fa-shield-cat text-dark fa fs-2 "></i></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div  class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-regular fa-user fa fs-4 text-success"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" routerLink="products/cart">View Cart</a></li>
+                  <li><a class="dropdown-item" routerLink="products/wishlist">Wishlist</a></li>
+                  <li><a class="dropdown-item" routerLink="products/login"> Login</a></li>
+                </ul>
+              </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+              
+  
+             <div class="row">
+                <div style="margin-right: 200px;" class="dropdown">
+                    
+                   <a  class="text-secondary" style="font-size:x-large; margin-left: 140px; color:rgb(0, 0, 0);text-decoration: none;" routerLink="products/mens"><b style="color: rgb(2, 2, 2);">Men</b></a>
+                   <a class="text-secondary"  style="font-size:x-large ; margin-left: 60px; color: white; text-decoration: none;" routerLink="products/womens"><b style="color: rgb(0, 0, 0);">Women</b></a>
+
+                   <a class="text-secondary" style="font-size:x-large; margin-left: 60px; color:white; text-decoration: none;" routerLink="products/shoes"><b style="color: rgb(16, 16, 16);">Unisex</b></a>
+                    
+                   <a class="text-secondary"  style="font-size:x-large; margin-left: 60px; color:white; text-decoration: none;" href=""><b style="color: rgb(22, 22, 21);">Gifts🎁</b></a>
+
+                  </div >
+                  <div style="width: 440px; margin-left: 506px; margin-top: -40px;" class="input-group ">&nbsp;
+                    <input (keyup)="search($event)" style="height: 40px; margin-left: 100px; border: 0cm; border-radius: 10px;"  type="text"  class="form-control bg-light border-secondary text-dark  " placeholder= " Search here..." aria-label="Example text with button addon" aria-describedby="button-addon1"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   
+                   <a style="margin-left: 620px; position:absolute;" routerLink="products/wishlist" ><i   class="fa-regular fa-heart text-dark fa fs-2 "></i></a> &nbsp;&nbsp;&nbsp;
+                   <a style="margin-left: 670px; position: absolute;" routerLink="products/cart"><i class="fa-solid text-dark fa fs-2 fa-bag-shopping"></i>
+                    <span  style="font-size:medium; margin-left: -1px;" class="badge bg-dark mb-2 text-warning rounded-pill-dark">{{cartItemCount}}</span></a>
+              
+                </div>
+
+               
+                
+             </div>
+             
+            </div>
+          
+          </nav>
+</div>
+
